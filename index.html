@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Are Broke</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            transition: background-color 1s ease-in-out;
+        }
+
+        h1, h2 {
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        img {
+            z-index: 1;
+            max-width: 40%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <h1>You Are Broke</h1>
+    <h2>Me too.</h2>
+    <img src="https://static.wikia.nocookie.net/villains/images/7/75/Hobo.png/revision/latest?cb=20190207160005" alt="Hobo Character">
+    
+    <script>
+        const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#34495e'];
+        let index = 0;
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length;
+        }
+
+        setInterval(changeBackgroundColor, 2000); // Changes color every 2 seconds for a smoother effect
+    </script>
+</body>
+</html>
